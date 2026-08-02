@@ -37,7 +37,9 @@ body {
 .nav-link {
     border-radius: 9999px;
     padding: 6px 14px;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
 }
 
 .nav-link:hover {
@@ -97,4 +99,9 @@ body {
     text-align: left;
     cursor: text;
     user-select: all;
+}
+button:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
 }

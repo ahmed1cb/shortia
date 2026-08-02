@@ -60,8 +60,11 @@ function showShortened(link) {
     }
   });
 }
-
+let disabled = false;
 urlForm.onsubmit = (e) => {
+  if (disabled) {
+    return false;
+  }
   const name = urlForm.name.value;
   const link = urlForm.url.value;
 
@@ -89,11 +92,16 @@ urlForm.onsubmit = (e) => {
   formData.append("name", name);
   formData.append("link", link);
 
+  disabled = true;
+  urlForm.querySelector("button").setAttribute("disabled", true);
+  console.log(urlForm.querySelector("button"));
   fetch("/src/api/url.php", {
     method: "POST",
     body: formData,
   })
-    .then((e) => e.json())
+    .then((e) => {
+      return e.json();
+    })
     .then((e) => {
       const link = `${location.origin}/?s=${e.short_link_tok}`;
       showShortened(link);
@@ -106,6 +114,10 @@ urlForm.onsubmit = (e) => {
         text: "Try again later.",
       });
       return false;
+    })
+    .finally(() => {
+      disabled = false;
+      urlForm.querySelector("button").removeAttribute('disabled');
     });
 
   e.preventDefault();

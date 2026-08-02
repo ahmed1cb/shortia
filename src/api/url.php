@@ -20,19 +20,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $statement->execute($data);
 
-    $idStatement = $pdo->prepare(
-        "SELECT id FROM shorten_links WHERE name = :name AND link = :link AND short_link = :short_link ",
-    );
-
-    $idStatement->execute($data);
-
-    $id = $idStatement->fetchObject()->id;
+    $id = $pdo->lastInsertId();
 
     $updateStatement = $pdo->prepare(
         "UPDATE  shorten_links SET short_link = :sl  WHERE id = :id",
     );
 
-    $newLink = bin2hex($name . $id); // just a token here to refer to the link
+    $newLink =  base64_encode($name . $id); // just a token here to refer to the link
     $updateStatement->execute([
         "id" => $id,
         "sl" => $newLink,
