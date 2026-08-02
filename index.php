@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/src/styles/main.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-<body>
+<body class="flex min-h-screen flex-col">
 
 <?php
 $currentPath = $_SERVER["REQUEST_URI"];
@@ -30,7 +30,7 @@ if (isset($_GET["s"])) {
     if ($obj) {
         $link = $obj->link;
 
-        header("Location: $link?utm_source=shortia");
+        header("Location: $link");
         exit();
     }
 }
@@ -43,7 +43,7 @@ include "src/components/header.php";
 ?>
 
 
-<main class="content">
+<main class="content flex-1">
         <?php
         $allowedToInclude = ["/pages/url", "/pages/qrcode"];
 
@@ -53,6 +53,7 @@ include "src/components/header.php";
         ?>
 </main>
 
+<?php include "src/components/footer.php"; ?>
 
 </body>
 </html>

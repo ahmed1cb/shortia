@@ -1,15 +1,15 @@
 <header
-    class="sticky top-0 z-50 border-b border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950"
+    class="sticky top-0 z-50 border-b border-neutral-200 bg-neutral-50/80 backdrop-blur dark:border-neutral-800 dark:bg-neutral-950/80"
 >
     <div
-        class="mx-auto flex max-w-5xl items-center justify-between gap-6 px-4 py-4 sm:px-6"
+        class="mx-auto flex max-w-5xl items-center justify-between gap-6 px-4 py-3 sm:px-6"
     >
-        <a href="/" class="flex min-w-0 items-center gap-3">
+        <a href="/" class="group flex min-w-0 items-center gap-3">
             <span
-                class="flex h-6 w-6 shrink-0 items-center justify-center bg-orange-600"
+                class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-orange-600 shadow-sm transition-transform group-hover:scale-105"
             >
                 <svg
-                    class="h-4 w-4 text-white"
+                    class="h-5 w-5 text-white"
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -47,23 +47,23 @@
         </a>
 
         <nav class="flex items-center">
-            <ul class="flex items-center gap-6 sm:gap-8">
+            <ul class="flex items-center gap-1 sm:gap-2">
                 <li>
                     <a
                         href="/pages/url"
-                        class="<?= $_SERVER["REQUEST_URI"] == "/pages/url"
+                        class="nav-link <?= $_SERVER["REQUEST_URI"] == "/pages/url"
                             ? "active"
-                            : "" ?> border-b-2 border-transparent pb-1 text-xs font-semibold uppercase tracking-wide text-neutral-700 transition-colors hover:border-orange-600 hover:text-orange-600 dark:text-neutral-300 dark:hover:text-orange-500"
+                            : "" ?> text-xs font-semibold uppercase tracking-wide text-neutral-700 dark:text-neutral-300 dark:hover:text-orange-500"
                         >Url Shortener</a
                     >
                 </li>
                 <li>
                     <a
                         href="/pages/qrcode"
-                        class="border-b-2 <?= $_SERVER["REQUEST_URI"] ==
+                        class="nav-link <?= $_SERVER["REQUEST_URI"] ==
                         "/pages/qrcode"
                             ? "active"
-                            : "" ?> border-transparent pb-1 text-xs font-semibold uppercase tracking-wide text-neutral-700 transition-colors hover:border-orange-600 hover:text-orange-600 dark:text-neutral-300 dark:hover:text-orange-500"
+                            : "" ?> text-xs font-semibold uppercase tracking-wide text-neutral-700 dark:text-neutral-300 dark:hover:text-orange-500"
                         >Qr Generator</a
                     >
                 </li>
@@ -73,7 +73,7 @@
         <div class="flex items-center">
             <button
                 id="toggle-btn"
-                class="flex h-9 w-9 rounded-2xl cursor-pointer items-center justify-center border border-neutral-300 text-neutral-600 transition-colors hover:border-orange-600 hover:text-orange-600 dark:border-neutral-700 dark:text-neutral-300 dark:hover:border-orange-500 dark:hover:text-orange-500"
+                class="flex h-9 w-9 cursor-pointer items-center justify-center rounded-xl border border-neutral-300 text-neutral-600 transition-colors hover:border-orange-600 hover:text-orange-600 dark:border-neutral-700 dark:text-neutral-300 dark:hover:border-orange-500 dark:hover:text-orange-500"
                 aria-label="Toggle dark mode"
             >
                 <img
