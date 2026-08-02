@@ -9,7 +9,7 @@
         </p>
     </div>
 
-    <form class="url-details mx-auto max-w-xl rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm sm:p-8 dark:border-neutral-800 dark:bg-neutral-900">
+    <form id="url-form" class="url-details mx-auto max-w-xl rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm sm:p-8 dark:border-neutral-800 dark:bg-neutral-900">
         <div class="space-y-5">
             <div>
                 <label for="name" class="mb-2 block text-sm font-semibold text-neutral-700 dark:text-neutral-300">
@@ -44,3 +44,5 @@
     </form>
 
 </section>
+
+<script src="/src/scripts/url.js"></script>

@@ -9,6 +9,7 @@
     <title>Shortia The URL Shortener</title>
     <link rel="stylesheet" href="/src/styles/output.css">
     <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/ldcover/dist/index.min.css">
 </head>
 <body>
 
@@ -19,8 +20,8 @@ if ($currentPath == "/") {
     header("Location: /pages/url");
     exit();
 }
-
 include "src/components/header.php";
+include "src/core/database.php";
 ?>
 
 
@@ -34,5 +35,8 @@ include "src/components/header.php";
         ?>
 </main>
 
+<div id="app-modal" class="main-modal"></div>
+
+<script src="https://cdn.jsdelivr.net/gh/loadingio/ldcover/dist/index.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,12 @@
+DROP DATABASE IF EXISTS shortia;
+CREATE DATABASE shortia;
+USE shortia;
+
+CREATE TABLE IF NOT EXISTS shorten_links(
+
+    `id`  BIGINT NOT NULL UNIQUE AUTO_INCREMENT,
+
+    `name` VARCHAR(255) NOT NULL ,
+
+    `link` VARCHAR(255) NOT NULL
+);
