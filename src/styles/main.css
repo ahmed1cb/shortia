@@ -22,3 +22,10 @@ body {
     background-color: var(--color-bg);
     color: var(--color-text);
 }
+
+ul li a.active {
+    background-color: var(--color-accent);
+    padding: 12px;
+    border-radius: 12px;
+    color: #fff !important;
+}
