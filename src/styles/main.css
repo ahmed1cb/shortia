@@ -20,6 +20,7 @@
 
 body {
     background-color: var(--color-bg);
+    font-family: inter !important;
     color: var(--color-text);
 }
 
