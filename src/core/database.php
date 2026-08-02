@@ -1,6 +1,6 @@
 <?php
 
-$conf = include "src/configs/database.php";
+$conf = include __DIR__ . "/../configs/database.php";
 
 $host = $conf["host"];
 $user = $conf["user"];
@@ -13,5 +13,3 @@ try {
 } catch (Exception $e) {
     die("Application have some errors try again later");
 }
-
-

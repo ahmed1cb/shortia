@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS shorten_links(
 
     `name` VARCHAR(255) NOT NULL ,
 
-    `link` VARCHAR(255) NOT NULL,
+    `link` VARCHAR(255) NOT NULL ,
 
     `short_link` VARCHAR(255) NOT NULL UNIQUE
 );

@@ -16,12 +16,30 @@
 <?php
 $currentPath = $_SERVER["REQUEST_URI"];
 
+if (isset($_GET["s"])) {
+    include "src/core/database.php";
+
+    $targetStatement = $pdo->prepare(
+        "SELECT link FROM shorten_links WHERE short_link = :sl",
+    );
+
+    $targetStatement->execute(["sl" => $_GET["s"]]);
+
+    $obj = $targetStatement->fetchObject();
+
+    if ($obj) {
+        $link = $obj->link;
+
+        header("Location: $link?utm_source=shortia");
+        exit();
+    }
+}
+
 if ($currentPath == "/") {
     header("Location: /pages/url");
     exit();
 }
 include "src/components/header.php";
-include "src/core/database.php";
 ?>
 
 
