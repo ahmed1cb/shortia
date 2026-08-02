@@ -9,7 +9,7 @@
     <title>Shortia The URL Shortener</title>
     <link rel="stylesheet" href="/src/styles/output.css">
     <link rel="stylesheet" href="/src/styles/main.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/ldcover/dist/index.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -35,8 +35,6 @@ include "src/core/database.php";
         ?>
 </main>
 
-<div id="app-modal" class="main-modal"></div>
 
-<script src="https://cdn.jsdelivr.net/gh/loadingio/ldcover/dist/index.min.js"></script>
 </body>
 </html>

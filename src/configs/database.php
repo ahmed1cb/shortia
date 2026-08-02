@@ -2,7 +2,7 @@
 
 $baseData = [
     "user" => "root",
-    "pass" => "",
+    "pass" => "ahmed1cb",
     "host" => "localhost",
     "dbname" => "shortia",
 ];
