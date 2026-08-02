@@ -22,7 +22,13 @@ include "src/components/header.php";
 
 
 <main class="content">
+        <?php
+        $allowedToInclude = ["/pages/url", "/pages/qrcode"];
 
+        if (in_array($currentPath, $allowedToInclude)) {
+            include "src$currentPath.php";
+        }
+    ?>
 </main>
 
 </body>
