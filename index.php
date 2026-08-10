@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="/src/styles/output.css">
     <link rel="stylesheet" href="/src/styles/main.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/src/scripts/main.js"></script>
+
 </head>
 <body class="flex min-h-screen flex-col">
 
@@ -17,27 +19,27 @@
 $currentPath = $_SERVER["REQUEST_URI"];
 
 if (isset($_GET["s"])) {
-    include "src/core/database.php";
+  include "src/core/database.php";
 
-    $targetStatement = $pdo->prepare(
-        "SELECT link FROM shorten_links WHERE short_link = :sl",
-    );
+  $targetStatement = $pdo->prepare(
+    "SELECT link FROM shorten_links WHERE short_link = :sl",
+  );
 
-    $targetStatement->execute(["sl" => $_GET["s"]]);
+  $targetStatement->execute(["sl" => $_GET["s"]]);
 
-    $obj = $targetStatement->fetchObject();
+  $obj = $targetStatement->fetchObject();
 
-    if ($obj) {
-        $link = $obj->link;
+  if ($obj) {
+    $link = $obj->link;
 
-        header("Location: $link");
-        exit();
-    }
+    header("Location: $link");
+    exit();
+  }
 }
 
 if ($currentPath == "/") {
-    header("Location: /pages/url");
-    exit();
+  header("Location: /pages/url");
+  exit();
 }
 include "src/components/header.php";
 ?>
@@ -48,7 +50,7 @@ include "src/components/header.php";
         $allowedToInclude = ["/pages/url", "/pages/qrcode"];
 
         if (in_array($currentPath, $allowedToInclude)) {
-            include "src$currentPath.php";
+          include "src$currentPath.php";
         }
         ?>
 </main>

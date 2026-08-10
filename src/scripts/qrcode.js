@@ -8,9 +8,12 @@ var qrcode = new QRCode("preview", {
 
 qrcodeForm.onsubmit = (e) => {
   const text = textInput.value;
-  qrcode.clear();
-  qrcode.makeCode(text);
+  try {
+    qrcode.clear();
+    qrcode.makeCode(text);
+  } catch (e) {
+    
+  }
 
-  console.log(text);
   e.preventDefault();
 };
